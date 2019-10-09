@@ -129,6 +129,16 @@ $('.video-carousel').slick({
   slidesToScroll: 1,
   arrows: false,
   fade: true,
+  infinite: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+
+        dots: true,
+      }
+    }
+  ]
 });
 
 

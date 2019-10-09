@@ -246,7 +246,7 @@
 	z-index: 1;
 	box-shadow: none!important;
 	color: #373737;
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 	border: 2px solid transparent;
 	.icon {
 		margin-right: 16px;
@@ -281,6 +281,9 @@
 	background-color: #fff;
 	border-color: #fff;
 	color: #008fd1;
+	&:hover, &:active, &:focus {
+		color: #008fd1;
+	}
 }
 
 .btn-outline-white {
@@ -291,28 +294,52 @@
 .btn-outline-white {
 	color: #fff;
 	border-color: #fff;
+	&:hover, &:active, &:focus {
+		background-color: #008fd1;
+		border-color: #008fd1;
+		color: #fff;
+	}
+
 }
 
 .btn-outline-blue {
 	border-color: #0c2558;
 	color: #0c2558;
+	&:hover, &:active, &:focus {
+		background-color: #0c2558;
+		border-color: #0c2558;
+		color: #fff;
+	}
 }
 
 .btn-outline-blue-light {
 	border-color: #008fd1;
 	color: #008fd1;
+	&:hover, &:active, &:focus {
+		background-color: #008fd1;
+		color: #fff;
+	}
 }
 
 .btn-red {
 	background-color: #9c072b;
 	border-color: #9c072b;
 	color: #fff;
+	&:hover, &:active, &:focus {
+		background-color: lighten(#9c072b ,10%);
+		border-color: lighten(#9c072b ,10%);
+		color: #fff;
+	}
 }
 
 .btn-blue {
 	background-color: #008fd1;
 	border-color: #008fd1;
 	color: #fff;
+	&:hover, &:active, &:focus {
+		background-color: lighten(#008fd1 ,10%);
+		border-color: lighten(#008fd1 ,10%);
+	}
 }
 
 .btn_width_265 {

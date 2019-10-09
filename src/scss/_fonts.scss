@@ -3,6 +3,17 @@
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat:400,700|Roboto&display=swap');
+
+
+
+
+// font-family: 'Montserrat', sans-serif;
+
+// font-family: 'Roboto', sans-serif;
+
+// font-family: 'Lato', sans-serif;
+
 
 
 @font-face {
@@ -48,12 +59,12 @@
 
 @font-face {
     font-family: 'Mont';
-    src: url('../fonts/Mont-Regular.eot');
-    src: url('../fonts/Mont-Regular.eot') format('embedded-opentype'),
-         url('../fonts/Mont-Regular.woff2') format('woff2'),
-         url('../fonts/Mont-Regular.woff') format('woff'),
-         url('../fonts/Mont-Regular.ttf') format('truetype'),
-         url('../fonts/Mont-Regular.svg#Mont-Regular') format('svg');
+    src: url('../fonts/Mont-Book.eot');
+    src: url('../fonts/Mont-Book.eot') format('embedded-opentype'),
+         url('../fonts/Mont-Book.woff2') format('woff2'),
+         url('../fonts/Mont-Book.woff') format('woff'),
+         url('../fonts/Mont-Book.ttf') format('truetype'),
+         url('../fonts/Mont-Book.svg#Mont-Book') format('svg');
     font-weight: 400;
     font-style: normal;
     font-display: swap
