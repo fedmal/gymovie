@@ -95,10 +95,6 @@ $('.slider-tabs .slider-nav').slick({
   vertical: true,
   centerMode: true,
   focusOnSelect: true,
-
-
-
-
 });
 
 
@@ -132,6 +128,7 @@ $('.video-carousel').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
+  fade: true,
 });
 
 
