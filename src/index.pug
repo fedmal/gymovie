@@ -1,0 +1,473 @@
+extends pug/base
+
+append vars
+	-
+		var body = {
+			classList: ["main-page"]
+		}
+
+	-	
+		var services = [
+			{
+				title: 'Podcast Studio',
+				text: 'Our state-of-the-art studio is the first of its kind in Leeds and is available for you to create your very own podcasts.'
+			},
+			{
+				title: 'Creative Services',
+				text: 'We’re professional filmmakers; we know what works and how to create the story to best engage your customers. '
+			},
+			{
+				title: 'Video Production',
+				text: 'We’re professional filmmakers; we know what works and how to create the story to best engage your customers. '
+			}
+		]
+
+	-	
+		var blogs = [ 
+			{
+				title: 'Get Your Media Flies to the Netherlands to vlog for Sabre',
+				text: 'In consequat, quam id sodales hendrerit, eros mi molestie leo, nec lacinia risus neque tristique augue. Proin tempus urna vel'
+			},
+			{
+				title: 'Top 10 Tips for using video for your companies social platforms',
+				text: 'Etiam facilisis ligula nec velit posuere egestas. Nunc dictum lectus sem, vel dignissim purus luctus quis. Vestibulum et '
+			},
+			{
+				title: 'Hi my names Josh Gudgeon from Get Your Media',
+				text: 'Aenean non accumsan ante. Duis et risus accumsan sem tempus porta nec sit amet est. Sed ut euismod quam. Suspendisse'
+			}
+		]
+
+
+
+block content
+
+	.main-wrap
+		.site__layer
+		include pug/header
+		
+		main.main-container
+			.hero
+				.container.container_1470
+					.row
+
+						.col-xl-4.col-lg-5.order-lg-3
+							.hero__img
+								.hero__img__inner
+									//- .hero__img__bg
+									img(src="images/hero__img-bg.svg", alt="").hero__img-bg
+
+									svg(viewBox="0 0 383.97192 383.34341").hero__img-polygon
+										pattern#pattern(width='100%', height='100%', patternUnits="userSpaceOnUse")
+											image(xlink:href='images/Image_1.png', width='384', height='384')
+										path(fill-rule='evenodd', fill='url(#pattern)', d='m 150.88652,17.004123 c 30.70054,-25.2644035 68.96737,-31.241728 109.16441,45.247748 40.19682,76.488079 101.7007,200.637629 120.85586,239.385879 19.15398,38.74984 -5.68805,80.0808 -51.50056,78.18113 C 283.59312,377.92003 182.43187,363.881 99.464907,347.12122 16.497946,330.36143 -14.841963,319.49327 11.308645,242.9962 37.46227,166.50008 120.1854,42.269333 150.88732,17.004708 Z')
+
+
+
+
+						.col-xl-8.col-lg-7.order-lg-2
+							.hero__info
+								h1.text-xl.hero__title
+									| Disrupt the monotony 
+									br
+									| of modern day marketing
+								.text-mute.hero__desc
+									p
+										| We’re professional content creators; we know what works to disrupt the monotony of the modern world
+
+								ul.btn-list.hero__btn-list
+									li
+										a(href="#").btn.btn-outline-blue-light.btn-lg.btn_width_265
+											i.icon.fa.fa-video-camera
+											| Showreel
+									li
+										a(href="#").btn.btn-red.btn-lg.btn_width_265
+											i.icon.fa.fa-microphone
+											| Book Studio
+
+
+
+
+
+			.services.grey-bg
+				
+				.container
+					.heading
+						h2.heading__title.text-xs
+							| OUR SERVICES
+						h3.heading__subtitle.text-lg
+							| Providing a straight talking service
+						.heading__desc
+							p
+								| Aenean non accumsan ante. Duis et risus accumsan sem tempus porta nec sit amet est. Sed ut euismod quam. Suspendisse potenti. 
+								| Aliquam fringilla orci tincidunt, ullamcorper erat in, malesuada metus. Vivamus luctus maximus vestibulum. 
+								| Donec et enim 
+
+					
+					
+					.post-grid.services_grid
+						.row.post-grid__row
+							each service, idx in services
+								.col-md-4.post-grid__col
+									.post-box(style=`background-image: url(images/services/img-${idx + 1}.jpg)`)
+										.post-box__body
+											.post-box__icon
+												img(src=`images/services/icons/icon-${idx + 1}.svg`, alt="")
+											.post-box__info
+												h3.post-box__title
+													a(href="#")= service.title
+												.post-box__desc
+													p= service.text
+											.post-box__btn
+												a(href="#").btn.btn-outline-white
+													| Read more
+
+
+					.text-center
+						a(href="#").btn.btn-outline-blue-light.btn-lg.btn_width_265
+							i.icon.fa.fa-video-camera
+							| Get In touch
+
+			.clients
+				.container
+					.heading
+						h2.heading__title.text-xs
+							| Our clients
+						h3.heading__subtitle.text-lg
+							| Taking good care of our customers
+				.clients-carousel-wrap
+					.clients-carousel.owl-carousel(data-autoplay="false" data-nav-text = ["<i class='fa fa-caret-left'></i> ","<i class='fa fa-caret-right'></i>"] data-nav="true" data-dots="false" data-loop="true" data-slidespeed="200" data-margin="30" data-responsive='{"0":{"items": "1"}, "400":{"items": "2"} , "600":{"items": "3"} ,  "1200":{"items": "4"}}')
+						.item
+							.clients-carousel__box
+								img(src="images/clients/img-1.png", alt="")
+						.item
+							.clients-carousel__box
+								img(src="images/clients/img-2.png", alt="")
+						.item
+							.clients-carousel__box
+								img(src="images/clients/img-3.png", alt="")
+						.item
+							.clients-carousel__box
+								img(src="images/clients/img-4.png", alt="")
+						.item
+							.clients-carousel__box
+								img(src="images/clients/img-4.png", alt="")
+
+
+
+
+			.grey-bg
+				.latest.latest_projects.slider-tabs
+					.container
+						.row
+							.col-lg-5
+								.latest__left
+									.latest__left__heading
+										h2.latest__title.heading__subtitle.text-lg
+											| Latest Projects
+										.latest__desc
+											| Some of our latest projects
+									
+									ul.slider-tabs-nav.slider-nav
+										li
+											.slider-tabs-nav__item
+												span
+													| Sandal Auto
+										li
+											.slider-tabs-nav__item
+												span
+													| Leeds United
+										li
+											.slider-tabs-nav__item
+												span
+													| Enfields Estate Agent
+										li
+											.slider-tabs-nav__item
+												span
+													| Motorpoint Car Supermarket
+										li
+											.slider-tabs-nav__item
+												span
+													| AVT MMA Leeds
+
+
+							.col-lg-7
+								.latest__right.latest-video
+									.slider-tabs-wrap.slider-for
+										div
+											.slider-tabs__tab
+												.video.latest-video__video
+													.video-js-box.tube-css.video-js-responsive-container.vjs-hd
+														video.video-js( controls="" preload="")
+															source(src="video/Урок 2. Установка WordPress.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+
+												.latest-video__desc
+													p
+														| It has taken months and months of hard work, rebranding, marketing, sponsorships, videos, social media & strategy to get them to this point.
+														| We are so proud to be working with such a prestigious company. 
+
+												a(href="#").btn.btn-outline-blue.latest-video__btn
+													| See Project
+
+										div
+											.slider-tabs__tab
+												.video.latest-video__video
+													.video-js-box.tube-css.video-js-responsive-container.vjs-hd
+														video.video-js( controls="" preload="")
+															source(src="video/Урок 2. Установка WordPress.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+
+												.latest-video__desc
+													p
+														| It has taken months and months of hard work, rebranding, marketing, sponsorships, videos, social media & strategy to get them to this point.
+														| We are so proud to be working with such a prestigious company. 
+
+												a(href="#").btn.btn-outline-blue.latest-video__btn
+													| See Project
+										div
+											.slider-tabs__tab
+												.video.latest-video__video
+													.video-js-box.tube-css.video-js-responsive-container.vjs-hd
+														video.video-js( controls="" preload="")
+															source(src="video/Урок 2. Установка WordPress.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+
+												.latest-video__desc
+													p
+														| It has taken months and months of hard work, rebranding, marketing, sponsorships, videos, social media & strategy to get them to this point.
+														| We are so proud to be working with such a prestigious company. 
+
+												a(href="#").btn.btn-outline-blue.latest-video__btn
+													| See Project
+										div
+											.slider-tabs__tab
+												.video.latest-video__video
+													.video-js-box.tube-css.video-js-responsive-container.vjs-hd
+														video.video-js( controls="" preload="")
+															source(src="video/Урок 2. Установка WordPress.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+
+												.latest-video__desc
+													p
+														| It has taken months and months of hard work, rebranding, marketing, sponsorships, videos, social media & strategy to get them to this point.
+														| We are so proud to be working with such a prestigious company. 
+
+												a(href="#").btn.btn-outline-blue.latest-video__btn
+													| See Project
+										div
+											.slider-tabs__tab
+												.video.latest-video__video
+													.video-js-box.tube-css.video-js-responsive-container.vjs-hd
+														video.video-js( controls="" preload="")
+															source(src="video/Урок 2. Установка WordPress.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+
+												.latest-video__desc
+													p
+														| It has taken months and months of hard work, rebranding, marketing, sponsorships, videos, social media & strategy to get them to this point.
+														| We are so proud to be working with such a prestigious company. 
+
+												a(href="#").btn.btn-outline-blue.latest-video__btn
+													| See Project
+
+
+				.testimonials.wave-block
+					svg.wave-divider.wave-block__top(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewBox='0 24 150 28', preserveAspectRatio='none')
+						g.wave-parallax1
+							use(xlink:href='#gentle-wave', x='50', y='3', fill="rgba(0, 143, 209, .2)")
+						g.wave-parallax2
+							use(xlink:href='#gentle-wave', x='50', y='9', fill="rgba(129, 144, 166, .2)")
+						g.wave-parallax4
+							use(xlink:href='#gentle-wave', x='50', y='6', fill="#00152b")
+
+
+					.container
+						.heading
+							h2.heading__title.text-xs
+								| Testimonials
+							h3.heading__subtitle.text-lg
+								| What our clients have to say
+							.heading__desc
+								p
+									| Don’t just take our word for it!
+						
+						.testimonials-carousel.owl-carousel(data-autoplay="false" data-nav="false" data-dots="false" data-loop="false" data-slidespeed="200" data-items="1")
+							.item
+								.testimonial
+									.testimonial__image.clip-image
+										.testimonial__img__inner.clip-image__inner
+											img(src="images/testimonial-polygon-bg.svg", alt="").clip-image__bg.testimonial__img-bg
+											svg(viewBox="0 0 383.97192 383.34341").clip-image__polygon.testimonial__img-polygon
+												pattern#pattern1(width='100%', height='100%', patternUnits="userSpaceOnUse")
+													image(xlink:href='images/Image_2.png', width='383', height='383')
+												path(fill-rule='evenodd', fill='url(#pattern1)', d='m 150.88652,17.004123 c 30.70054,-25.2644035 68.96737,-31.241728 109.16441,45.247748 40.19682,76.488079 101.7007,200.637629 120.85586,239.385879 19.15398,38.74984 -5.68805,80.0808 -51.50056,78.18113 C 283.59312,377.92003 182.43187,363.881 99.464907,347.12122 16.497946,330.36143 -14.841963,319.49327 11.308645,242.9962 37.46227,166.50008 120.1854,42.269333 150.88732,17.004708 Z')
+									.testimonial__text
+										| Get Your Media has some serious talent ! They can transform things into masterpieces 👍 Proud to say they’re a part of our team 👍
+
+									ul.rating.testimonial__rating
+										li
+											i.icon.fa.fa-star
+										li
+											i.icon.fa.fa-star
+										li
+											i.icon.fa.fa-star
+										li
+											i.icon.fa.fa-star
+										li
+											i.icon.fa.fa-star
+
+									.testimonial__name
+										| Dale
+									.testimonial__company
+										| Barrett Steel Race Team
+							.item
+								.testimonial
+									.testimonial__image.clip-image
+										.testimonial__img__inner.clip-image__inner
+											img(src="images/testimonial-polygon-bg.svg", alt="").clip-image__bg.testimonial__img-bg
+											svg(viewBox="0 0 383.97192 383.34341").clip-image__polygon.testimonial__img-polygon
+												pattern#pattern2(width='100%', height='100%', patternUnits="userSpaceOnUse")
+													image(xlink:href='images/64825.jpg', width='383', height='383')
+												path(fill-rule='evenodd', fill='url(#pattern2)', d='m 150.88652,17.004123 c 30.70054,-25.2644035 68.96737,-31.241728 109.16441,45.247748 40.19682,76.488079 101.7007,200.637629 120.85586,239.385879 19.15398,38.74984 -5.68805,80.0808 -51.50056,78.18113 C 283.59312,377.92003 182.43187,363.881 99.464907,347.12122 16.497946,330.36143 -14.841963,319.49327 11.308645,242.9962 37.46227,166.50008 120.1854,42.269333 150.88732,17.004708 Z')
+
+									.testimonial__text
+										| Get Your Media has some serious talent ! They can transform things into masterpieces 👍 Proud to say they’re a part of our team 👍
+
+									ul.rating.testimonial__rating
+										li
+											i.icon.fa.fa-star
+										li
+											i.icon.fa.fa-star
+										li
+											i.icon.fa.fa-star
+										li
+											i.icon.fa.fa-star
+										li
+											i.icon.fa.fa-star
+
+									.testimonial__name
+										| Dale
+
+									.testimonial__company
+										| Barrett Steel Race Team
+
+					svg.wave-divider.wave-block__bottom(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewBox='0 24 150 28', preserveAspectRatio='none')
+						g.wave-parallax1
+							use(xlink:href='#gentle-wave', x='50', y='3', fill="rgba(0, 143, 209, .2)")
+						g.wave-parallax2
+							use(xlink:href='#gentle-wave', x='50', y='9', fill="rgba(129, 144, 166, .2)")
+						g.wave-parallax3
+							use(xlink:href='#gentle-wave', x='50', y='6', fill="#00152b")
+
+
+				.our-blog
+					.container
+						.heading
+							h2.heading__title.text-xs
+								| Our Blog
+							h3.heading__subtitle.text-lg
+								| Keep up to date
+							.heading__desc
+								p
+									| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dapibus vehicula elit vel egestas.
+
+
+						.blog-grid
+							.row.blog-grid__row
+								each blog, idx in blogs
+									.col-md-4.blog-grid__col
+										.blog-box
+											.blog-box__image
+												a(href="#")
+													img(src=`images/news/img-${idx + 1}.jpg`, alt="")
+											.blog-box__info
+												h3.blog-box__title
+													a(href="#")= blog.title
+												.blog-box__desc
+													p= blog.text
+												a(href="#").blog-box__btn
+													+svg('arrow-blog')
+
+						.text-center
+							a(href="#").btn.btn-outline-blue-light.btn-lg.btn_width_265
+								i.icon.fa.fa-video-camera
+								| Read More
+
+		footer.footer
+			.container
+				.footer__inner
+					.row
+						.col-lg-5
+							.footer-info
+								.footer__logo
+									a(href="/")
+										img(src="images/footer-logo.svg", alt="")
+								.footer__desc
+									| The full-stack design team who focuses on digital products whatever they are.
+
+								ul.social-list.footer__social
+									li
+										a(href="#")
+											i.icon.fa.fa-facebook
+									li
+										a(href="#")
+											i.icon.fa.fa-twitter
+									li
+										a(href="#")
+											i.icon.fa.fa-google-plus
+									li
+										a(href="#")
+											i.icon.fa.fa-youtube-play
+
+								//- .footer__copy.hidden-lg
+								//- 	| © 2019 all rights reserved
+
+						.col-lg-7
+							.footer-nav
+								.row
+									.col-sm-6.col-md-4
+										.footer-widget
+											h3.footer-widget__title
+												| Pages
+
+											ul.footer-nav-list
+												li
+													a(href="#") Home
+												li
+													a(href="#") Services
+												li
+													a(href="#") About us
+												li
+													a(href="#") Blog
+												li
+													a(href="#") Contact us
+
+									.col-sm-6.col-md-4
+										.footer-widget
+											h3.footer-widget__title
+												| Shortcuts
+
+											ul.footer-nav-list
+												li
+													a(href="#") Book Studio
+												li
+													a(href="#") Book Skype
+												li
+													a(href="#") Privacy Policy
+												li
+													a(href="#") Cookie Policy
+
+									.col-md-4
+										.footer-widget
+											h3.footer-widget__title
+												| Contact
+
+											ul.footer-nav-list.contact_list
+												li
+													+svg('phone')
+													a(href="#") +123 456 789
+												li
+													+svg('location')
+													a(href="#") Contact Us
+
+
+					.footer__copy
+						| © 2019 all rights reserved
+
+		//- include pug/footer    
