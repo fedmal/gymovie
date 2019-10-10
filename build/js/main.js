@@ -120,7 +120,32 @@ $('.tiled-slider').slick({
   autoplay: false,
   autoplaySpeed:  2800,
   centerMode: true,
-  centerPadding: "0"
+  centerPadding: "0",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: true
+      }
+    }
+  ]
 });
 
 
