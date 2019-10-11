@@ -7,6 +7,10 @@ $(function() {
   // var toggleMenu = $(".header__toggle-nav");
   toggleMenu.html(toggleMenu.data("text"));
 
+  $(".toggle-submenu").on('click', function(){
+    $(this).parent().toggleClass("open-submenu");
+  });
+
 
   toggleMenu.on('click', function(){
 
