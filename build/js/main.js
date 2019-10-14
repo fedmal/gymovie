@@ -107,7 +107,7 @@ $(".owl-carousel").each(function(){
 // })
 
 
-  (function ($) { 
+
     $('.tabs-video .slider-tabs-nav li a').on('click', function (t) { 
       var tabs_parent = $(this).parents('.tabs-video'), 
         tabs = tabs_parent.find('.slider-tabs-wrap'), 
@@ -123,7 +123,7 @@ $(".owl-carousel").each(function(){
         t.preventDefault();
       
     } );
-  } )(jQuery);
+
 
 
 
@@ -142,7 +142,7 @@ $('.tiled-slider').slick({
   autoplaySpeed:  2800,
   centerMode: true,
   centerPadding: "0",
-  
+
   responsive: [
     {
       breakpoint: 1024,

@@ -12548,35 +12548,17 @@ a {
     .hero__img {
       margin-bottom: 50px; } }
 
-.blog-polygon {
-  -webkit-clip-path: url("#blog-polygon_1");
-  -moz-clip-path: url("#blog-polygon_1");
-  -ms-clip-path: url("#blog-polygon_1");
-  clip-path: url("#blog-polygon_1"); }
-
-.profiles-grid .profiles-grid__col:nth-child(2n-1) .profile-box__image .blog-polygon {
-  -webkit-clip-path: url("#blog-polygon_1");
-  -moz-clip-path: url("#blog-polygon_1");
-  -ms-clip-path: url("#blog-polygon_1");
-  clip-path: url("#blog-polygon_1"); }
-
-.profiles-grid .profiles-grid__col:nth-child(3n-1) .profile-box__image .blog-polygon {
-  -webkit-clip-path: url("#blog-polygon_2");
-  -moz-clip-path: url("#blog-polygon_2");
-  -ms-clip-path: url("#blog-polygon_2");
-  clip-path: url("#blog-polygon_2"); }
-
-.profiles-grid .profiles-grid__col:nth-child(3n) .profile-box__image .blog-polygon {
-  -webkit-clip-path: url("#blog-polygon_3");
-  -moz-clip-path: url("#blog-polygon_3");
-  -ms-clip-path: url("#blog-polygon_3");
-  clip-path: url("#blog-polygon_3"); }
-
 .hero__img-polygon {
   z-index: 1;
   position: relative;
   width: 380px;
-  height: 376px; }
+  height: 376px;
+  -webkit-mask-image: url(../images/hero-polygon.svg);
+          mask-image: url(../images/hero-polygon.svg);
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat; }
   @media (max-width: 575px) {
     .hero__img-polygon {
       width: 280px;
@@ -13100,7 +13082,15 @@ a {
 
 .clip-image__bg {
   width: 100%;
-  position: absolute; }
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+     -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+       -o-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  margin-left: 20px;
+  margin-top: 20px; }
 
 .testimonial__image {
   margin-bottom: 94px; }
@@ -13114,8 +13104,13 @@ a {
   height: 189px; }
 
 .testimonial__img-polygon {
-  width: 186px;
-  height: 184px; }
+  width: 186px !important;
+  -webkit-mask-image: url(../images/hero-polygon.svg);
+          mask-image: url(../images/hero-polygon.svg);
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat; }
 
 .testimonials-carousel .testimonial__image img {
   width: auto;
@@ -13610,6 +13605,23 @@ a {
 
 .profile-box__image {
   margin-bottom: 35px; }
+  .profile-box__image .blog-polygon {
+    -webkit-mask-position: center center;
+            mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat; }
+
+.profiles-grid .profiles-grid__col:nth-child(2n-1) .profile-box__image .blog-polygon {
+  -webkit-mask-image: url(../images/mask-1.svg);
+          mask-image: url(../images/mask-1.svg); }
+
+.profiles-grid .profiles-grid__col:nth-child(3n-1) .profile-box__image .blog-polygon {
+  -webkit-mask-image: url(../images/mask-2.svg);
+          mask-image: url(../images/mask-2.svg); }
+
+.profiles-grid .profiles-grid__col:nth-child(3n) .profile-box__image .blog-polygon {
+  -webkit-mask-image: url(../images/mask-3.svg);
+          mask-image: url(../images/mask-3.svg); }
 
 .profile-box__image__inner {
   display: inline-block;
@@ -13913,59 +13925,30 @@ a {
   background-color: #fff; }
 
 .blog-posts .blog-post-box:nth-child(2n-1) .blog-post-box__image .blog-polygon {
-  -webkit-clip-path: url("#blog-polygon-lg_1");
-  -moz-clip-path: url("#blog-polygon-lg_1");
-  -ms-clip-path: url("#blog-polygon-lg_1");
-  clip-path: url("#blog-polygon-lg_1");
-  -o-object-fit: cover;
-     object-fit: cover; }
-  @media (max-width: 767px) {
-    .blog-posts .blog-post-box:nth-child(2n-1) .blog-post-box__image .blog-polygon {
-      -webkit-clip-path: url("#blog-polygon_1");
-      -moz-clip-path: url("#blog-polygon_1");
-      -ms-clip-path: url("#blog-polygon_1");
-      clip-path: url("#blog-polygon_1"); } }
+  -webkit-mask-image: url(../images/mask-1.svg);
+          mask-image: url(../images/mask-1.svg); }
 
 .blog-posts .blog-post-box:nth-child(3n-1) .blog-post-box__image .blog-polygon {
-  -webkit-clip-path: url("#blog-polygon-lg_3");
-  -moz-clip-path: url("#blog-polygon-lg_3");
-  -ms-clip-path: url("#blog-polygon-lg_3");
-  clip-path: url("#blog-polygon-lg_3");
-  -o-object-fit: cover;
-     object-fit: cover; }
-  @media (max-width: 767px) {
-    .blog-posts .blog-post-box:nth-child(3n-1) .blog-post-box__image .blog-polygon {
-      -webkit-clip-path: url("#blog-polygon_3");
-      -moz-clip-path: url("#blog-polygon_3");
-      -ms-clip-path: url("#blog-polygon_3");
-      clip-path: url("#blog-polygon_3"); } }
+  -webkit-mask-image: url(../images/mask-2.svg);
+          mask-image: url(../images/mask-2.svg); }
 
 .blog-posts .blog-post-box:nth-child(3n) .blog-post-box__image .blog-polygon {
-  -webkit-clip-path: url("#blog-polygon-lg_2");
-  -moz-clip-path: url("#blog-polygon-lg_2");
-  -ms-clip-path: url("#blog-polygon-lg_2");
-  clip-path: url("#blog-polygon-lg_2");
-  -o-object-fit: cover;
-     object-fit: cover; }
-  @media (max-width: 767px) {
-    .blog-posts .blog-post-box:nth-child(3n) .blog-post-box__image .blog-polygon {
-      -webkit-clip-path: url("#blog-polygon_2");
-      -moz-clip-path: url("#blog-polygon_2");
-      -ms-clip-path: url("#blog-polygon_2");
-      clip-path: url("#blog-polygon_2"); } }
+  -webkit-mask-image: url(../images/mask-3.svg);
+          mask-image: url(../images/mask-3.svg); }
 
 .blog-post-box__image {
   text-align: center; }
   .blog-post-box__image .blog-polygon {
-    -webkit-clip-path: url("#blog-polygon-lg_1");
-    -moz-clip-path: url("#blog-polygon-lg_1");
-    -ms-clip-path: url("#blog-polygon-lg_1");
-    clip-path: url("#blog-polygon-lg_1"); }
+    -webkit-mask-image: url(../images/mask-1.svg);
+            mask-image: url(../images/mask-1.svg);
+    -webkit-mask-position: center center;
+            mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat; }
 
 .blog-post-box__image__inner {
   text-align: center;
   max-width: 335px;
-  height: 314px;
   width: 100%;
   display: inline-block; }
   @media (max-width: 767px) {
