@@ -59,10 +59,6 @@ $(function() {
       setTimeout(function() {
         headerHeight = $('.header').innerHeight();
       }, 3000) 
-
-
-       
-      
       $('.main-menu').css({'margin-top': $('.header').css('height'), 'height' : 'calc(100% - ' + headerHeight + 'px)'});
 
    })
@@ -77,38 +73,59 @@ $(".owl-carousel").each(function(){
 
 
 
- $('.slider-tabs .slider-for').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.slider-tabs .slider-nav',
+//  $('.slider-tabs .slider-for').slick({
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   arrows: false,
+//   fade: true,
+//   asNavFor: '.slider-tabs .slider-nav',
 
-  nextArrow: $('#next'),
+//   nextArrow: $('#next'),
 
-  prevArrow: $('#prev'),
+//   prevArrow: $('#prev'),
 
-});
-
-
-$('.slider-tabs .slider-nav').slick({
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  asNavFor: '.slider-tabs .slider-for',
-  dots: true,
-  vertical: true,
-  centerMode: true,
-  focusOnSelect: true,
-});
+// });
 
 
-$(".slider-tabs__nav .prev").click(function(){
-  $(".slider-tabs .slider-for").slick("slickPrev")
-})
+// $('.slider-tabs .slider-nav').slick({
+//   slidesToShow: 5,
+//   slidesToScroll: 1,
+//   asNavFor: '.slider-tabs .slider-for',
+//   dots: true,
+//   vertical: true,
+//   centerMode: true,
+//   focusOnSelect: true,
+// });
 
-$(".slider-tabs__nav .next").click(function(){
-  $(".slider-tabs .slider-for").slick("slickNext")
-})
+
+// $(".slider-tabs__nav .prev").click(function(){
+//   $(".slider-tabs .slider-for").slick("slickPrev")
+// })
+
+// $(".slider-tabs__nav .next").click(function(){
+//   $(".slider-tabs .slider-for").slick("slickNext")
+// })
+
+
+  (function ($) { 
+    $('.tabs-video .slider-tabs-nav li a').on('click', function (t) { 
+      var tabs_parent = $(this).parents('.tabs-video'), 
+        tabs = tabs_parent.find('.slider-tabs-wrap'), 
+        index = $(this).parents('li').index();
+
+        tabs_parent.find('.slider-tabs-nav > .current_tab').removeClass('current_tab');
+
+        $(this).parents('li').addClass('current_tab');
+        
+        
+        tabs.find('.slider-tabs__tab').not(':eq(' + index + ')').removeClass('active_tab');
+        tabs.find('.slider-tabs__tab:eq(' + index + ')').addClass('active_tab');
+        t.preventDefault();
+      
+    } );
+  } )(jQuery);
+
+
 
 VideoJS.setup();
 
@@ -125,6 +142,7 @@ $('.tiled-slider').slick({
   autoplaySpeed:  2800,
   centerMode: true,
   centerPadding: "0",
+  
   responsive: [
     {
       breakpoint: 1024,
