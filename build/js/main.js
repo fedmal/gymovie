@@ -52,6 +52,13 @@ $(function() {
   }
   equalHeight('.featured-icons .featured__icon');
 
+
+  equalHeight('.value-box__title');
+
+  equalHeight('.icon-box__title');
+
+
+
   var headerHeight = 0;
 
   $(window).resize(function() {
@@ -191,11 +198,78 @@ $('.video-carousel').slick({
 
 $(".slider-video__nav .prev").click(function(){
   $(".video-carousel").slick("slickPrev")
-})
+});
 
 $(".slider-video__nav .next").click(function(){
   $(".video-carousel").slick("slickNext")
-})
+});
+
+
+$(window).scroll(function () { 
+  if ($(this).scrollTop() > 200) {
+    $('#toTop').filter(':hidden').fadeIn('fast');
+  } else {
+    $('#toTop').filter(':visible').fadeOut('fast');
+  }
+} );
+
+
+$('#toTop').on('click', function () { 
+  $('html, body').animate( { 
+    scrollTop : 0 
+  }, 'slow');
+  
+  
+  return false;
+} );
+
+
+  // if ( $( ".header" ).length ) {
+  //   var sticky = new Waypoint.Sticky({
+  //     element: $('.header')[0]
+  //   });
+  // };
+
+
+
+
+
+
+
+
+
+// jQuery(window).on('scroll', function (e) {
+//     var distanceY = jQuery(window).pageYOffset || jQuery(document).scrollTop(),
+//         jQuerythis = jQuery('.header'),
+//         navOffset = 50,
+//         shrinkOn = (jQuerythis.data('set-offset')) ? jQuerythis.data('set-offset') : navOffset,
+//         isShrink = jQuery(".is-shrink");
+
+//         console.log(shrinkOn)
+
+//     if (distanceY > shrinkOn) {
+//         isShrink.addClass("smaller");
+
+//     } else {
+//         isShrink.removeClass("smaller");
+//     }
+// });
+
+
+  $(window).scroll(function () {
+     var distanceY = $(this).scrollTop(),
+         shrinkOn  = 50,
+         header    = $(".header");
+
+    if (distanceY > shrinkOn) {
+      header.addClass("smaller");
+    } else {
+      if (header.hasClass("smaller")) {
+        header.removeClass("smaller");
+      }
+    }
+  }); 
+
 
 
 });
